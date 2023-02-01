@@ -1,6 +1,6 @@
 import Task from "./Task";
 import React, { Component } from "react";
-import './appStyles.css';
+import "./appStyles.css";
 
 class App extends Component {
   counter = 0;
@@ -60,11 +60,12 @@ class App extends Component {
   render() {
     const tasks = this.state.tasks.map((task) => (
       <Task key={task.id} task={task} deleteTask={this.handleDeleteTask} />
-    ))
+    ));
     return (
-      <>
+      <div className="wrapper">
         <div className="form">
           <input
+            className="inputName"
             type="text"
             placeholder="Dodaj zadanie"
             onChange={this.handleText}
@@ -84,7 +85,7 @@ class App extends Component {
           <button onClick={this.handleAddNewTask}>Wyślij</button>
         </div>
         <div className="taskList">{tasks}</div>
-      </>
+      </div>
     );
   }
 }
