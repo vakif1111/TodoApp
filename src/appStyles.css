@@ -4,13 +4,98 @@
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%) fixed;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
 .wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40%;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
 }
 
 .inputName {
-  padding: 50px;
+  /* padding: 12px 20px; */
+  border-style: solid;
+  text-align: center;
+  outline: transparent;
+  height: 50px;
+  /* width: 100%; */
+  flex-grow: 1;
+  border-radius: 5px;
+}
+
+.importantCheckboxContainer label {
+  /* width: 34px; */
+  height: 100%;
+  width: 50px;
+  display: block;
+  /* background-color: #ff0032; */
+  border-radius: 5px;
+  position: relative;
+  border: #ff0032 2px solid;
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.exclamationIcon {
+  font-size: 40px;
+  color: #ff0032;
+}
+
+.aaa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="date"] {
+  /* margin: 0.4rem 0; */
+  background-color: #b6d1ff;
+  padding: 5px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+  background-color: white;
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.form button {
+  background-color: #b6d1ff;
+  border: none;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.buttonPlus {
+  color: white;
+}
+
+h1 {
+  font-size: xx-large;
+  padding: 10px 0;
 }

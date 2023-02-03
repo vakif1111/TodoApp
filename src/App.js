@@ -1,6 +1,8 @@
 import Task from "./Task";
 import React, { Component } from "react";
 import "./appStyles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faExclamation } from "@fortawesome/free-solid-svg-icons";
 
 class App extends Component {
   counter = 0;
@@ -63,6 +65,7 @@ class App extends Component {
     ));
     return (
       <div className="wrapper">
+        <h1>ToDo App</h1>
         <div className="form">
           <input
             className="inputName"
@@ -71,18 +74,31 @@ class App extends Component {
             onChange={this.handleText}
             value={this.state.text}
           />
-          <label htmlFor="important">Czy zadanie jest ważne?</label>
-          <input
-            type="checkbox"
-            onChange={this.handleCheck}
-            checked={this.state.check}
-          />
           <input
             type="date"
             onChange={this.handleDate}
             value={this.state.date}
           />
-          <button onClick={this.handleAddNewTask}>Wyślij</button>
+          <div className="importantCheckboxContainer">
+            <label htmlFor="checkboxImportant">
+              <div className="aaa">
+                <FontAwesomeIcon
+                  icon={faExclamation}
+                  className="exclamationIcon"
+                />
+              </div>
+            </label>
+
+            <input
+              type="checkbox"
+              onChange={this.handleCheck}
+              checked={this.state.check}
+              id="checkboxImportant"
+            />
+          </div>
+          <button onClick={this.handleAddNewTask}>
+            <FontAwesomeIcon icon={faPlus} className="buttonPlus" />
+          </button>
         </div>
         <div className="taskList">{tasks}</div>
       </div>
