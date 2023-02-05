@@ -63,21 +63,17 @@ class App extends Component {
     const tasks = this.state.tasks.map((task) => (
       <Task key={task.id} task={task} deleteTask={this.handleDeleteTask} />
     ));
+
     return (
       <div className="wrapper">
-        <h1>ToDo App</h1>
+        <h1>Todo App</h1>
         <div className="form">
           <input
             className="inputName"
             type="text"
-            placeholder="Dodaj zadanie"
+            placeholder="Add task"
             onChange={this.handleText}
             value={this.state.text}
-          />
-          <input
-            type="date"
-            onChange={this.handleDate}
-            value={this.state.date}
           />
           <div className="importantCheckboxContainer">
             <label htmlFor="checkboxImportant">
@@ -96,11 +92,28 @@ class App extends Component {
               id="checkboxImportant"
             />
           </div>
-          <button onClick={this.handleAddNewTask}>
+          <input
+            type="date"
+            onChange={this.handleDate}
+            value={this.state.date}
+          />
+          <button
+            onClick={this.handleAddNewTask}
+            style={{
+              backgroundColor:
+                this.state.text.length > 2 ? "#7840C4" : "#B994EA",
+            }}
+          >
             <FontAwesomeIcon icon={faPlus} className="buttonPlus" />
           </button>
         </div>
         <div className="taskList">{tasks}</div>
+        {this.state.tasks.length ? (
+          <div className="taskCounter">
+            You have {this.state.tasks.length} task
+            {this.state.tasks.length > 1 ? "s" : null}
+          </div>
+        ) : null}
       </div>
     );
   }

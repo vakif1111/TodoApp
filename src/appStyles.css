@@ -7,7 +7,7 @@
 body {
   background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%) fixed;
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: arial;
 }
 
 .wrapper {
@@ -27,14 +27,14 @@ body {
 }
 
 .inputName {
-  /* padding: 12px 20px; */
   border-style: solid;
   text-align: center;
   outline: transparent;
   height: 50px;
-  /* width: 100%; */
+  width: 5px;
   flex-grow: 1;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 .importantCheckboxContainer label {
@@ -85,7 +85,7 @@ input[type="date"] {
 }
 
 .form button {
-  background-color: #b6d1ff;
+  background-color: #b994ea;
   border: none;
   width: 50px;
   border-radius: 5px;
@@ -98,4 +98,9 @@ input[type="date"] {
 h1 {
   font-size: xx-large;
   padding: 10px 0;
+}
+
+.taskCounter {
+  font-size: 22px;
+  margin-top: 20px;
 }
