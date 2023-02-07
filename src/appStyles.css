@@ -48,6 +48,14 @@ body {
   border: #ff0032 2px solid;
 }
 
+.importantCheckboxContainer .active {
+  background-color: #ff0032;
+}
+
+.importantCheckboxContainer .active .exclamationIcon {
+  color: white;
+}
+
 input[type="checkbox"] {
   visibility: hidden;
   height: 0;

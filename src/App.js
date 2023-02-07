@@ -59,6 +59,12 @@ class App extends Component {
     this.setState({ tasks: taskCopy });
   };
 
+  handleDeleteAllTask = () => {
+    this.setState(() => ({
+      tasks: [],
+    }));
+  };
+
   render() {
     const tasks = this.state.tasks.map((task) => (
       <Task key={task.id} task={task} deleteTask={this.handleDeleteTask} />
@@ -76,7 +82,10 @@ class App extends Component {
             value={this.state.text}
           />
           <div className="importantCheckboxContainer">
-            <label htmlFor="checkboxImportant">
+            <label
+              htmlFor="checkboxImportant"
+              className={`${this.state.check ? "active" : ""}`}
+            >
               <div className="aaa">
                 <FontAwesomeIcon
                   icon={faExclamation}
@@ -114,6 +123,9 @@ class App extends Component {
             {this.state.tasks.length > 1 ? "s" : null}
           </div>
         ) : null}
+        <button onClick={this.handleDeleteAllTask} className="deleteAllTask">
+          Remove
+        </button>
       </div>
     );
   }
